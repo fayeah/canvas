@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <canvas width="800" height="600" id="canvas"></canvas>
+    <script>
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0); //normal drawing
+      ctx.drawImage(
+        img, //draw stretched
+        0,
+        0,
+        66,
+        66, //source (x,y,w,h)
+        100,
+        0,
+        100,
+        100 //destination (x,y,w,h)
+      );
+      ctx.drawImage(
+        img, //draw a slice
+        20,
+        10,
+        20,
+        20, //source coords (x,y,w,h)
+        250,
+        0,
+        250,
+        50 //destination coords (x,y,w,h)
+      );
+    </script>
+  </body>
+</html>
