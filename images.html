@@ -1,32 +1,40 @@
 <html>
   <body>
-    <canvas width="800" height="600" id="canvas"></canvas>
+    <canvas width="800" height="600" id="canvas">
+      <div>
+        <img id="source" src="./catty.jpeg" />
+      </div>
+    </canvas>
     <script>
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0); //normal drawing
-      ctx.drawImage(
-        img, //draw stretched
-        0,
-        0,
-        66,
-        66, //source (x,y,w,h)
-        100,
-        0,
-        100,
-        100 //destination (x,y,w,h)
-      );
-      ctx.drawImage(
-        img, //draw a slice
-        20,
-        10,
-        20,
-        20, //source coords (x,y,w,h)
-        250,
-        0,
-        250,
-        50 //destination coords (x,y,w,h)
-      );
+      const img = document.getElementById("source");
+      img.addEventListener("load", (e) => {
+        // ctx.drawImage(img, 33, 71, 104, 124, 21, 20, 87, 104);
+        ctx.drawImage(img, 0, 0); //normal drawing
+        ctx.drawImage(
+          img, //draw stretched
+          0,
+          0,
+          266,
+          266, //source (x,y,w,h)
+          300,
+          0,
+          200,
+          200 //destination (x,y,w,h)
+        );
+        ctx.drawImage(
+          img, //draw a slice
+          20,
+          30,
+          100,
+          100, //source coords (x,y,w,h)
+          550,
+          0,
+          250,
+          50 //destination coords (x,y,w,h)
+        );
+      });
     </script>
   </body>
 </html>
